@@ -28,7 +28,7 @@ function Row({ title , fetchUrl}) {
              <img 
           key={id}
           className="row_poster"
-          src={`${baseUrl}${movie.poster_path}`}
+          src={`https://image.tmdb.org/t/p/original/${movie?.poster_path}`}
           alt={movie.name}
           /> 
           <div className='Overlay'>

@@ -29,8 +29,6 @@ const Banner = ({fetchRandom}) => {
     >
         <div className="banner-fade-up"/>
         <div className="banner_contents">
-        
-        
         {/* title */}
         <h1 className="banner_title">{movie?.title || movie?.name || movie?.original_name}</h1>
         <Link to={`/Moviedetails/${movie.id}`}><button type="text" className='banner_button'>View More</button></Link>
