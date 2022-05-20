@@ -8,7 +8,7 @@ import Error from "../Errorpage/Error";
 function Search() {
   const [searchMovies,setSearchMovies] = useState([]);
   const [searchValue,setSearchValue] = useState('');
-
+ 
   async function onSubmit(e){
    e.preventDefault();
     const searchAPI = `https://api.themoviedb.org/3/search/multi?api_key=8612aaeb857886e801ddfca868da9cf3&language=en-US&query=${searchValue}&`; 

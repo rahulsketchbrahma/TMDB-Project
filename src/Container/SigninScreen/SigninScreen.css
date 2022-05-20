@@ -1,10 +1,11 @@
 .signin-wrapper{
     background-color: black;
     height: 100vh;
+    background-image: linear-gradient(to top , rgba(0, 0, 0, 0.8) , rgba(0, 0, 1, 0.598)), url(../../Assets/Search-8jpg.jpg);
 }
 .signin{
-    background-image: linear-gradient(to top , rgba(0, 0, 0, 0.84) , rgba(0, 0, 1, 0)), url(../../Assets/Search-8jpg.jpg);
-    height: 45vh;
+    background-image:url(../../Assets/Search-8jpg.jpg);
+    height: 40vh;
     background-position: center;
     background-color: black;
     display: flex;
@@ -18,11 +19,13 @@
 }
 .signin-title{
     color: white;
-    font-size: 40px;
-    margin: 0;
+    font-size: 24px;
+    width: 30%;
+    margin: auto;
+    text-align: center;
 }
 .signin_form{
-    width: 40%;
+    width: 50%;
     margin: auto;
     text-align: center;
 }
@@ -32,7 +35,7 @@
     padding: 10px 20px;
     border-radius: 5px;
     margin-right: 10px;
-
+    margin-top: 10px;
 }
 .signin_button{
     background-color: aquamarine;
@@ -43,13 +46,29 @@
     font-weight: bold;
     width: 220px;
     border: none;
-
+    transition: transform 450ms;
 }
 .signin-contents{
     color: white;
+    margin-bottom: 20px;
 }
 .Sign_up{
     font-size: 15px;
     color:crimson;
+    cursor: pointer;  
+}
+.signin_button:hover{
+    transform: scale(1.03);
     cursor: pointer;
+}
+.Alien{
+    color: black;
+    -webkit-text-stroke: 1px rgb(255, 254, 254);
+    font-size: 50px;
+}
+
+@media only screen and (max-width: 923px){
+    .signin-wrappers{
+        background-color: black;
+    }
 }
