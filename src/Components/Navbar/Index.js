@@ -1,8 +1,13 @@
 import React from "react";
 import'./Navbar.css';
 import{Link} from 'react-router-dom'
+import { logout } from "../../helper";
+import { Navigate } from "react-router-dom";
 
-
+const onSubmitt = () => {
+    logout();
+    Navigate('/SignIn');
+}
 
 function Navbar(){
     return(
@@ -14,9 +19,9 @@ function Navbar(){
         <div className='search-button'>
             <Link to='/Search'><p className='Navbar-search'>SEARCH</p></Link>
         </div>
-        <div className='sign-out'>
-            <Link to='/Warning'><button type="text" className='Navbar-signout'>SIGN OUT</button></Link>
-        </div>
+        <form className='sign-out' onSubmit={onSubmitt}>
+            <button type="submit" className='Navbar-signout'>SIGN OUT</button>
+        </form>
     </div>
         
     )
