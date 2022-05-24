@@ -1,7 +1,9 @@
+
 const TOKEN_KEY = 'userToken';
 
+
 export const login = () => {
-    localStorage.setItem(TOKEN_KEY, '73962969048fe583fbd2ce2bb1d96b85078a501e');
+    localStorage.setItem(TOKEN_KEY, 123 );
 }
 
 export const logout = () => {
@@ -12,6 +14,5 @@ export const isLogin = () => {
     if (localStorage.getItem(TOKEN_KEY)) {
         return true;
     }
-
         return false
 }

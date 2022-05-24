@@ -9,6 +9,7 @@ import SigninScreen from '../Container/SigninScreen/Index';
 import SignupScreen from '../Container/SignupScreen/Index'
 import Private from '../Private/Index';
 import Public from '../Public/Index';
+import Token from '../Token';
 
 
 
@@ -17,6 +18,7 @@ function App() {
   return (
     <BrowserRouter>
     <div className="app">
+    <Token/>
     <Routes>
   <Route path="/" element={ <Public component= {FrontPage} />} / >
   <Route path="/Home" element={<Private component={Home} />} />
@@ -25,6 +27,7 @@ function App() {
   <Route path="/Search" element={<Private component={Search} />}/>
   <Route path="/SignIn" element={<Public component= {SigninScreen} />}/>
   <Route path="/SignUp" element={<Public component= {SignupScreen} />}/>
+ 
 </Routes>
     </div>
     </BrowserRouter>
