@@ -1,6 +1,5 @@
 import React,{useState,useEffect} from "react";
 import axios from "axios";
-import {login} from './helper'
 
 function Token(){
     const [TokenValue, setTokenValue] = useState([]);
@@ -13,9 +12,8 @@ function Token(){
             console.log('token',request.data.guest_session_id)
               return request;
         }
-        
         fetchToken();
-        
+       
 
     },[]);
     return(
@@ -27,3 +25,5 @@ function Token(){
 
 }
 export default Token;
+
+

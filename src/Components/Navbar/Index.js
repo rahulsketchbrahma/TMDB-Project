@@ -8,7 +8,6 @@ const onSubmitt = () => {
     logout();
     Navigate('/SignIn');
 }
-
 function Navbar(){
     return(
         

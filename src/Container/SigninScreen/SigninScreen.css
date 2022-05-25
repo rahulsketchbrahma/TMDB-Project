@@ -2,6 +2,12 @@
     background-color: black;
     height: 100vh;
     background-image: linear-gradient(to top , rgba(0, 0, 0, 0.8) , rgba(0, 0, 1, 0.598)), url(../../Assets/Search-8jpg.jpg);
+}    
+.Form_container{
+    margin: 0;
+    color: white;
+    display: flex;
+    justify-content: center;
 }
 .signin{
     background-image:url(../../Assets/Search-8jpg.jpg);
@@ -34,7 +40,6 @@
     border: none;
     padding: 10px 20px;
     border-radius: 5px;
-    margin-right: 10px;
     margin-top: 10px;
 }
 .signin_button{
@@ -42,7 +47,6 @@
     box-shadow: 1px 1px 60px aquamarine;
     padding: 10px 20px;
     border-radius: 5px;
-    margin-top: 20px;
     font-weight: bold;
     width: 220px;
     border: none;
@@ -72,12 +76,24 @@
     display: none;
     margin-top: 7px;
 }
-
-input:invalid[focused=true] ~ .form_error, input:invalid[focusedEmail=true] ~ .form_error_email {
-    display: block;
+.form_e{
+    font-size: 11px;
+    color: rgb(255, 0, 0);
+    text-shadow: 1px 1px 20px rgb(255, 0, 0) ;
+    padding: 5px 8px;
+    font-weight: bold;
+    border-radius: 3px;
+    text-align: center;   
 }
-input:invalid[focused=true] , input:invalid[focusedEmail=true] {
-    border: 2px solid red;
+.success_message{
+    text-align: center;
+    color: rgb(0, 0, 0);
+    background-color: rgb(0, 255, 8);
+    padding: 6px 7px;
+    border-radius: 4px;
+    font-size: 11px;
+    font-weight: bold;
+    box-shadow: 1px 1px 25px greenyellow;
 }
 @media only screen and (max-width: 923px){
     .signin-wrappers{
