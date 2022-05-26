@@ -1,9 +1,11 @@
 import React,{useState,useEffect} from "react";
+import { Navigate } from "react-router-dom";
+import { login } from "../../helper";
 import './SigninScreen.css'
 
 function SignIn(){
 
-    const initialValues = { username: "", email: ""};
+  const initialValues = { username: "", email: ""};
   const [formValues, setFormValues] = useState(initialValues);
   const [formErrors, setFormErrors] = useState({});
   const [isSubmit, setIsSubmit] = useState(false);
@@ -17,8 +19,9 @@ function SignIn(){
   const handleSubmit = (e) => {
     e.preventDefault();
     setFormErrors(validate(formValues));
-    setIsSubmit(true);
-    
+    setIsSubmit(true); 
+    login();
+    Navigate('/Home');   
   };
 
   useEffect(() => {
