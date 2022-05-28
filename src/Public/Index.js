@@ -1,7 +1,13 @@
 import React from 'react';
 import { Navigate } from 'react-router-dom';
-import{ isLogin} from '../helper';
 
+const TOKEN_KEY = 'userToken';
+const isLogin = () => {
+    if (localStorage.getItem(TOKEN_KEY)) {
+        return true;
+    }
+        return false
+}
 
 const Public = ({component:Component , ...rest}) => {
     if(isLogin()){

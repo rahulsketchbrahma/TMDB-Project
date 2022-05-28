@@ -1,14 +1,14 @@
 import React from "react";
 import'./Navbar.css';
 import{Link} from 'react-router-dom'
-import { logout } from "../../helper";
 import { Navigate } from "react-router-dom";
 
-const onSubmitt = () => {
-    logout();
-    Navigate('/SignIn');
-}
 function Navbar(){
+    const TOKEN_KEY = 'userToken';
+    const onSubmitt = () => {
+        localStorage.removeItem(TOKEN_KEY);
+        Navigate('/SignIn');
+    }
     return(
         
         <div className='Navbar-wrapper'>
@@ -17,7 +17,7 @@ function Navbar(){
         </div>
         <div className='search-button'>
             <Link to='/Search'><p className='Navbar-search'>SEARCH</p></Link>
-        </div>
+        </div> 
         <form className='sign-out' onSubmit={onSubmitt}>
             <button type="submit" className='Navbar-signout'>SIGN OUT</button>
         </form>

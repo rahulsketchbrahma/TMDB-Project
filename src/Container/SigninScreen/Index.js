@@ -1,26 +1,38 @@
 import React,{useState,useEffect} from "react";
-import { Navigate } from "react-router-dom";
-import { login } from "../../helper";
 import './SigninScreen.css'
-
+import { Navigate } from "react-router-dom";
+import axios from "axios";
 function SignIn(){
 
   const initialValues = { username: "", email: ""};
   const [formValues, setFormValues] = useState(initialValues);
   const [formErrors, setFormErrors] = useState({});
   const [isSubmit, setIsSubmit] = useState(false);
-  
+  const [TokenValue, setTokenValue] = useState([]);
 
+  
+  
   const handleChange = (e) => {
     const { name, value } = e.target;
     setFormValues({ ...formValues, [name]: value });
   };
+  useEffect(()=>{
+    const TokenValues = 'https://api.themoviedb.org/3/authentication/guest_session/new?api_key=8612aaeb857886e801ddfca868da9cf3';
+    async function fetchToken(){
+        const request= await axios.get(TokenValues);
+        setTokenValue(request.data.guest_session_id);
+        console.log('token',request.data.guest_session_id)
+          return request;
+    }
+    fetchToken();
+   
 
-  const handleSubmit = (e) => {
-    e.preventDefault();
+},[]);
+  const TOKEN_KEY = 'userToken';
+  const handleSubmit = () => {
     setFormErrors(validate(formValues));
     setIsSubmit(true); 
-    login();
+    localStorage.setItem(TOKEN_KEY,TokenValue  );
     Navigate('/Home');   
   };
 
@@ -42,6 +54,7 @@ function SignIn(){
       errors.email = "This is not a valid email format!";
     }
     return errors;
+    
   };
   return (
       <>
